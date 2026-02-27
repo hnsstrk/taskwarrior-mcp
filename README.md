@@ -25,7 +25,25 @@ A complete [Taskwarrior](https://taskwarrior.org/) integration for [Claude Code]
 
 ## Installation
 
-### 1. Install the MCP Server
+### Option A: Plugin Marketplace (Recommended)
+
+The easiest way to install everything -- the MCP server, slash commands, agents, skill, and hooks:
+
+```bash
+# 1. Register the marketplace
+claude /plugin marketplace add hnsstrk/taskwarrior-mcp
+
+# 2. Install the plugin
+claude /plugin install taskwarrior@taskwarrior-mcp
+```
+
+This automatically sets up the MCP server via `uvx` and loads all plugin components. No manual configuration needed.
+
+### Option B: Manual Installation
+
+For development or if you want more control:
+
+#### 1. Install the MCP Server
 
 ```bash
 git clone https://github.com/hnsstrk/taskwarrior-mcp.git
@@ -35,7 +53,7 @@ uv tool install -e ./mcp-server
 
 This installs `taskwarrior-mcp` as an editable tool. Code changes take effect immediately.
 
-### 2. Register the MCP Server in Claude Code
+#### 2. Register the MCP Server in Claude Code
 
 ```bash
 claude mcp add --transport stdio --scope user taskwarrior \
@@ -43,7 +61,7 @@ claude mcp add --transport stdio --scope user taskwarrior \
   -- taskwarrior-mcp
 ```
 
-### 3. Load the Plugin
+#### 3. Load the Plugin
 
 ```bash
 claude --plugin-dir /path/to/taskwarrior-mcp/plugin
