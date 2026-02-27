@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "mcp__taskwarrior__task_add|mcp__taskwarrior__task_modify|mcp__taskwarrior__task_done|mcp__taskwarrior__task_delete|mcp__taskwarrior__task_start|mcp__taskwarrior__task_stop",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '\"✓ \" + .tool_name' 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}

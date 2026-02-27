@@ -1,0 +1,13 @@
+{
+  "name": "taskwarrior-marketplace",
+  "owner": {
+    "name": "Hans"
+  },
+  "plugins": [
+    {
+      "name": "taskwarrior",
+      "source": "./plugin",
+      "description": "Taskwarrior integration with MCP server, commands, agents, skills and hooks"
+    }
+  ]
+}

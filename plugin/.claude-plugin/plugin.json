@@ -1,0 +1,15 @@
+{
+  "name": "taskwarrior",
+  "description": "Complete Taskwarrior integration. PROACTIVELY activate for: (1) Task management and todo lists, (2) Project planning and prioritization, (3) GTD inbox processing and reviews, (4) Deadline tracking and scheduling. Provides MCP server with 11+ tools, slash commands for reviews and planning, specialized agents, and auto-invoked skill.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Hans"
+  },
+  "keywords": [
+    "taskwarrior", "tasks", "todo", "gtd",
+    "project-management", "productivity", "planning"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hnsstrk/taskwarrior-mcp",
+  "repository": "https://github.com/hnsstrk/taskwarrior-mcp"
+}

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "taskwarrior": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["taskwarrior-mcp"],
+      "env": {
+        "TW_MCP_LOG_LEVEL": "WARNING"
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+# =============================================================================
+# Python
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# =============================================================================
+# Virtual Environments
+# =============================================================================
+
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# =============================================================================
+# uv / hatchling
+# =============================================================================
+
+# uv.lock wird bewusst NICHT ignoriert — gehört ins Repo (reproducible builds)
+# pyproject.toml wird bewusst NICHT ignoriert
+
+# uv cache (lokal, nicht projektspezifisch)
+.uv/
+
+# =============================================================================
+# Testing
+# =============================================================================
+
+.pytest_cache/
+.tox/
+.nox/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+
+# =============================================================================
+# Linting / Type Checking
+# =============================================================================
+
+.ruff_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+
+# =============================================================================
+# IDE / Editors
+# =============================================================================
+
+# VS Code
+.vscode/
+
+# JetBrains / PyCharm
+.idea/
+*.iml
+*.iws
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+\#*\#
+.\#*
+
+# =============================================================================
+# macOS
+# =============================================================================
+
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# =============================================================================
+# Environment / Secrets
+# =============================================================================
+
+.env
+.env.local
+.env.*.local
+# .env.example wird NICHT ignoriert
+
+# =============================================================================
+# Claude Code (user-spezifisch, nicht projektspezifisch)
+# =============================================================================
+
+# .claude/ enthält user-lokale Claude Code Daten — nicht ins Repo
+.claude/
+
+# CLAUDE.md wird bewusst NICHT ignoriert — gehört ins Repo (Projekt-Instruktionen)
+
+# =============================================================================
+# Sonstiges
+# =============================================================================
+
+# Temporäre Dateien
+*.tmp
+*.bak
+*.orig
+*.log
