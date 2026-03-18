@@ -74,6 +74,10 @@ claude --plugin-dir plugin/
 
 In agent configs, tools are referenced as `mcp__taskwarrior__<toolname>` (e.g., `mcp__taskwarrior__task_list`).
 
+## Documentation
+
+Projektdokumentation: Siehe Obsidian Vault [[Taskwarrior MCP]]
+
 ## Task Management
 
 Offene Tasks fuer dieses Projekt werden in **Taskwarrior** verwaltet (Projekt: `taskwarrior_mcp`).
