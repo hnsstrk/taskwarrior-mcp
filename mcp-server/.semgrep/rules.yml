@@ -1,0 +1,79 @@
+rules:
+  # -----------------------------------------------------------------------
+  # subprocess: shell=True ist in diesem Projekt verboten
+  # -----------------------------------------------------------------------
+  - id: taskwarrior-mcp.no-shell-true
+    patterns:
+      - pattern: subprocess.run(..., shell=True, ...)
+    message: >
+      subprocess.run() darf in diesem Projekt NIEMALS mit shell=True aufgerufen
+      werden. Verwende shell=False mit einer Argumentliste.
+      Siehe CLAUDE.md Regel 1.
+    languages: [python]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-78: OS Command Injection"
+
+  - id: taskwarrior-mcp.no-shell-true-popen
+    patterns:
+      - pattern: subprocess.Popen(..., shell=True, ...)
+    message: >
+      subprocess.Popen() darf in diesem Projekt NIEMALS mit shell=True
+      aufgerufen werden.
+    languages: [python]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-78: OS Command Injection"
+
+  # -----------------------------------------------------------------------
+  # subprocess: os.system() ist verboten
+  # -----------------------------------------------------------------------
+  - id: taskwarrior-mcp.no-os-system
+    pattern: os.system(...)
+    message: >
+      os.system() ist verboten. Verwende subprocess.run() mit shell=False.
+    languages: [python]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: "CWE-78: OS Command Injection"
+
+  # -----------------------------------------------------------------------
+  # MCP-Server: kein print() in Server-Code (stdio ist MCP-Protokoll)
+  # -----------------------------------------------------------------------
+  - id: taskwarrior-mcp.no-print-in-server
+    pattern: print(...)
+    paths:
+      include:
+        - src/
+    message: >
+      print() ist im MCP-Server verboten. stdio ist fuer das MCP-Protokoll
+      reserviert. Verwende stattdessen logging.
+      Siehe CLAUDE.md Regel 4.
+    languages: [python]
+    severity: WARNING
+    metadata:
+      category: correctness
+
+  # -----------------------------------------------------------------------
+  # str.split() statt shlex.split() fuer Filter-Parsing
+  # -----------------------------------------------------------------------
+  - id: taskwarrior-mcp.use-shlex-for-filters
+    patterns:
+      - pattern: $EXPR.split(...)
+      - metavariable-regex:
+          metavariable: $EXPR
+          regex: .*filter.*
+    paths:
+      include:
+        - src/
+    message: >
+      Fuer Filter-Strings shlex.split() statt str.split() verwenden.
+      str.split() zerbricht Strings mit Anfuehrungszeichen.
+      Siehe CLAUDE.md Regel 2.
+    languages: [python]
+    severity: WARNING
+    metadata:
+      category: correctness
